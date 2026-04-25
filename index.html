@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#C67A7C">
+    <link rel="manifest" href="/manifest.json">
+    <title>福岡放鬆之旅</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div id="app">
+        <header id="main-header" class="sticky-header">
+            <div class="header-top">
+                <h1 style="font-size:1.2rem; margin:10px 0;">🌸 九州專屬旅程</h1>
+                <button id="layout-toggle-btn" class="layout-toggle-btn">切換為電腦版</button>
+            </div>
+            <nav id="day-tabs-container"></nav>
+        </header>
+        
+        <main id="main-content">
+        </main>
+
+        <button id="fab-add-itinerary" class="fab">+</button>
+
+        <div id="bottom-sheet-container" class="bottom-sheet-container">
+            <div class="bottom-sheet-overlay"></div>
+            <div class="bottom-sheet">
+                <header class="bottom-sheet-header">
+                    <h2>新增行程</h2>
+                    <button id="close-bottom-sheet" class="close-btn">×</button>
+                </header>
+                <div class="bottom-sheet-content">
+                    <form id="add-itinerary-form">
+                        <div class="form-group">
+                            <label for="item-time">時間</label>
+                            <input type="time" id="item-time" name="time" required>
+                        </div>
+                        <div class="form-group">
+                            <label>類別</label>
+                            <div class="category-picker">
+                                <label><input type="radio" name="category" value="飲食" checked><span>🍜</span></label>
+                                <label><input type="radio" name="category" value="景點"><span>⛩️</span></label>
+                                <label><input type="radio" name="category" value="購物"><span>🛍️</span></label>
+                                <label><input type="radio" name="category" value="交通"><span>🚃</span></label>
+                                <label><input type="radio" name="category" value="其他"><span>📌</span></label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="item-name">景點/活動</label>
+                            <input type="text" id="item-name" name="name" placeholder="輸入景點或活動..." required>
+                        </div>
+                        <div class="form-group">
+                            <label for="item-location">地圖搜尋關鍵字 (選填)</label>
+                            <input type="text" id="item-location" name="location" placeholder="供 Google Maps 搜尋用，預設為名稱">
+                        </div>
+                        <div class="form-group">
+                            <label for="item-notes">備註</label>
+                            <textarea id="item-notes" name="notes" placeholder="提醒事項..."></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" id="cancel-add" class="btn-secondary">取消</button>
+                            <button type="submit" class="btn-primary">儲存</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="details-modal-container" class="details-modal-container">
+            <div class="details-modal-overlay"></div>
+            <div class="details-modal">
+                <header class="details-modal-header">
+                    <h2 id="details-title"></h2>
+                    <button id="close-details-modal" class="close-btn">×</button>
+                </header>
+                <div id="details-modal-content" class="details-modal-content">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/storage.js?v=2"></script>
+    <script src="/js/components/ItineraryTimeline.js?v=2"></script>
+    <script src="/js/main.js?v=2"></script>
+</body>
+</html>

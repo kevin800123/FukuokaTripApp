@@ -1,0 +1,8 @@
+{
+  "name": "福岡放鬆之旅",
+  "short_name": "福岡之旅",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#F9F8F6",
+  "theme_color": "#C67A7C"
+}
