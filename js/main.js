@@ -134,11 +134,11 @@ document.addEventListener('DOMContentLoaded', () => {
             
             <div class="detail-item">
                 <span class="detail-icon">📍</span>
-                <div class="detail-text" style="flex: 1;">
+                <div class="detail-text" style="flex: 1; min-width: 0;">
                     <strong>地圖搜尋關鍵字</strong>
-                    <div style="display: flex; gap: 8px; margin-top: 6px;">
-                        <input type="text" id="edit-location-input" value="${ItineraryTimeline.escapeHtml(item.location || '')}" placeholder="預設使用行程名稱" style="flex: 1; padding: 8px; border: 1px solid var(--border-color); border-radius: 8px; width: 100%; box-sizing: border-box;">
-                        <button id="save-location-btn" class="btn-primary" style="padding: 8px 16px; font-size: 14px;">儲存</button>
+                    <div style="display: flex; gap: 8px; margin-top: 6px; align-items: stretch;">
+                        <input type="text" id="edit-location-input" value="${ItineraryTimeline.escapeHtml(item.location || '')}" placeholder="預設使用行程名稱" style="flex: 1; padding: 8px; border: 1px solid var(--border-color); border-radius: 4px; min-width: 0; font-size: 14px;">
+                        <button id="save-location-btn" class="btn-primary" style="white-space: nowrap; flex-shrink: 0;">儲存</button>
                     </div>
                 </div>
             </div>

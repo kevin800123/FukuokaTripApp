@@ -14,7 +14,16 @@ const ItineraryTimeline = {
         this.mainContentContainer = document.querySelector(mainContentSelector);
         this.loadData();
         this.renderDayTabs();
-        this.mainContentContainer.innerHTML = '<div class="loading" style="text-align: center; padding: 40px; color: var(--text-light);">✈️ 載入天氣與行程中...</div>';
+        this.mainContentContainer.innerHTML = `
+            <div class="loading-screen" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 50vh; animation: fadeIn 0.8s forwards;">
+                <div style="font-size: 42px; margin-bottom: 20px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05));">🌸</div>
+                <h2 style="font-family: 'Noto Serif JP', serif; font-weight: 500; color: var(--text-color); margin: 0 0 8px 0; letter-spacing: 3px; font-size: 1.2rem;">FUKUOKA TRIP</h2>
+                <p style="font-size: 11px; color: var(--text-light); letter-spacing: 2px; margin: 0;">福岡放鬆之旅・準備中</p>
+                <div style="margin-top: 30px; width: 40px; height: 1px; background: var(--border-color); overflow: hidden; position: relative;">
+                    <div style="position: absolute; width: 20px; height: 100%; background: var(--primary-color); animation: loaderMove 1.5s infinite ease-in-out;"></div>
+                </div>
+            </div>
+        `;
         await this.fetchWeather();
         this.renderCurrentDayTimeline();
         this.addEventListeners();
