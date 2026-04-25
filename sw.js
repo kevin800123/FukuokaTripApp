@@ -1,4 +1,4 @@
-const CACHE_NAME = 'fukuoka-trip-cache-v1';
+const CACHE_NAME = 'fukuoka-trip-cache-v2';
 const urlsToCache = [
   './',
   'index.html',
