@@ -1,11 +1,11 @@
 const CACHE_NAME = 'fukuoka-trip-cache-v1';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/css/style.css',
-  '/js/main.js',
-  '/js/storage.js',
-  '/js/components/ItineraryTimeline.js'
+  './',
+  'index.html',
+  'css/style.css',
+  'js/main.js',
+  'js/storage.js',
+  'js/components/ItineraryTimeline.js'
 ];
 
 self.addEventListener('install', event => {
